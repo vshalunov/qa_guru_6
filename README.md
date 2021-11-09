@@ -1,1 +1,1 @@
-# qa_guru_6
+# Allure Reports. Артём Ерошенко
