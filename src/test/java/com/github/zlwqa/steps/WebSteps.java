@@ -31,7 +31,7 @@ public class WebSteps {
         return this;
     }
 
-    @Step("Проверить, что название Issues существует в репозитории zlw-qa/qa_guru_6")
+    @Step("Проверить, что таб Issues существует в репозитории zlw-qa/qa_guru_6")
     public WebSteps checkIssueNameInRepository() {
         $("#issues-tab").shouldHave(text("Issues"));
 

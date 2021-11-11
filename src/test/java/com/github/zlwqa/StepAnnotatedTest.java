@@ -1,6 +1,8 @@
 package com.github.zlwqa;
 
 import com.github.zlwqa.steps.WebSteps;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class StepAnnotatedTest extends TestBase {
@@ -9,6 +11,12 @@ public class StepAnnotatedTest extends TestBase {
     private final WebSteps steps = new WebSteps();
 
     @Test
+    @Owner("Vasilii Shalunov")
+    @Feature("Репозитории")
+    @Story("Отображение элементов в репозитории")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Проверка отображения табы Issues в репозитории zlw-qa/qa_guru_6")
+    @Link(name = "GitHub", url = "https://github.com")
     public void checkIssueNameInRepositoryTest() {
 
         steps.openMainPage()

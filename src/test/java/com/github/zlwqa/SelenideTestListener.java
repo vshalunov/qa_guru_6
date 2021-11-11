@@ -1,7 +1,9 @@
 package com.github.zlwqa;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -12,6 +14,12 @@ import static org.openqa.selenium.By.linkText;
 public class SelenideTestListener extends TestBase {
 
     @Test
+    @Owner("Vasilii Shalunov")
+    @Feature("Репозитории")
+    @Story("Отображение элементов в репозитории")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Проверка отображения табы Issues в репозитории zlw-qa/qa_guru_6")
+    @Link(name = "GitHub", url = "https://github.com")
     public void checkIssueNameInRepositoryTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -21,7 +29,7 @@ public class SelenideTestListener extends TestBase {
         $("[name=q]").setValue("zlw-qa/qa_guru_6").pressEnter();
         // В результате поиска перейти в репозиторий zlw-qa/qa_guru_6
         $(linkText("zlw-qa/qa_guru_6")).click();
-        // Проверить, что название Issues существует
+        // Проверить, что таб Issues существует
         $("#issues-tab").shouldHave(text("Issues"));
 
     }
