@@ -1,6 +1,12 @@
 package com.github.zlwqa;
 
+import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureLifecycle;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,6 +20,7 @@ public class StepLambdaTest extends TestBase {
 
     @Test
     public void checkIssueNameInRepositoryTest() {
+        AllureLifecycle lifecycle = Allure.getLifecycle();
 
         step("Открыть github.com", () -> {
             open("https://github.com/");
@@ -26,7 +33,14 @@ public class StepLambdaTest extends TestBase {
         });
         step("Проверить, что название Issues существует в репозитории " + REPOSITORY, () -> {
             $("#issues-tab").shouldHave(text("Issues"));
+            lifecycle.addAttachment("Screenshot репозитория " + REPOSITORY, "image/png",
+                    "png", takeScreenshot());
         });
 
+    }
+
+    private byte[] takeScreenshot() {
+        final WebDriver driver = WebDriverRunner.getWebDriver();
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

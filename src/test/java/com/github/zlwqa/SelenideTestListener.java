@@ -23,5 +23,8 @@ public class SelenideTestListener extends TestBase {
         $(linkText("zlw-qa/qa_guru_6")).click();
         // Проверить, что название Issues существует
         $("#issues-tab").shouldHave(text("Issues"));
+
     }
+
+
 }
