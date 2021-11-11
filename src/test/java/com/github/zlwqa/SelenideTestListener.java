@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,7 +19,7 @@ public class SelenideTestListener extends TestBase {
     @Feature("Репозитории")
     @Story("Отображение элементов в репозитории")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка отображения табы Issues в репозитории zlw-qa/qa_guru_6")
+    @DisplayName("Listener. Отображение табы Issues в репозитории zlw-qa/qa_guru_6")
     @Link(name = "GitHub", url = "https://github.com")
     public void checkIssueNameInRepositoryTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());

@@ -15,7 +15,7 @@ public class StepAnnotatedTest extends TestBase {
     @Feature("Репозитории")
     @Story("Отображение элементов в репозитории")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка отображения табы Issues в репозитории zlw-qa/qa_guru_6")
+    @DisplayName("Step annotated. Отображение табы Issues в репозитории zlw-qa/qa_guru_6")
     @Link(name = "GitHub", url = "https://github.com")
     public void checkIssueNameInRepositoryTest() {
 
