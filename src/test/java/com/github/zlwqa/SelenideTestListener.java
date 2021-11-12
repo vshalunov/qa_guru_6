@@ -34,6 +34,4 @@ public class SelenideTestListener extends TestBase {
         $("#issues-tab").shouldHave(text("Issues"));
 
     }
-
-
 }
